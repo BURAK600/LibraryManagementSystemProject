@@ -10,7 +10,7 @@ import com.bilgeadam.entity.UserInformation;
 import com.bilgeadam.service.EmployeeService;
 
 public class EmployeeController {
-
+	
 	EmployeeService employeeService;
 	Scanner scanner = new Scanner(System.in);
 
@@ -37,29 +37,31 @@ public class EmployeeController {
 		userInformation.setUser(user);
 		return employeeService.save(user);
 	}
-
+	
 	public Employee updateEmployee() {
 		return null;
-
+		
 	}
-
+	
 	public List<Employee> findAllEmployee() {
 		List<Employee> employees = new ArrayList<Employee>();
 		employees = employeeService.findAll();
-
+		
 		return employees;
 	}
-
+	
 	public Optional<Employee> findByIdEmployee(Long id) {
-
+		
 		Optional<Employee> employee = employeeService.findById(id);
 		return employee;
 	}
-
+	
 	public void deleteIdEmployee(Long id) {
 		employeeService.deleteById(id);
 	}
-
+	
+	
+	
 	public void deleteEmployee(Employee employee) {
 		employeeService.delete(employee);
 	}
